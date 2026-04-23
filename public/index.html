@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Palindrome Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- 🔝 TOP BAR -->
+  <div class="top-bar">
+    <h1>🔥 Palindrome Analyzer Pro</h1>
+    <button class="danger-btn" onclick="clearHistory()">🗑 Clear History</button>
+  </div>
+
+  <!-- INPUT -->
+  <div class="card">
+    <form enctype="multipart/form-data">
+
+      <!-- TEXT -->
+      <textarea id="textInput" placeholder="Enter text or paste paragraph..."></textarea>
+
+      <div class="controls">
+        <button type="button" onclick="analyzeText()">Analyze Text</button>
+        <button type="button" class="danger" onclick="clearText()">Clear Text</button>
+      </div>
+
+      <hr>
+
+      <!-- FILE -->
+      <input type="file" id="fileInput">
+
+      <div class="controls">
+        <button type="button" onclick="analyzeFile()">Analyze File</button>
+        <button type="button" class="danger" onclick="clearFile()">Clear File</button>
+      </div>
+
+    </form>
+
+    <p id="loader" style="display:none;">⏳ Processing...</p>
+  </div>
+
+  <!-- RESULT -->
+  <div class="card">
+    <h3>Result</h3>
+    <div id="result"></div>
+    <button onclick="downloadReport()">⬇ Download Report</button>
+  </div>
+
+  <!-- DATA -->
+  <div class="flex">
+    <div class="card">
+      <h3>Top</h3>
+      <ul id="top"></ul>
+    </div>
+
+    <div class="card">
+      <h3>History</h3>
+      <ul id="history"></ul>
+    </div>
+  </div>
+
+  <!-- GRAPH -->
+  <div class="card">
+    <canvas id="chart"></canvas>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
